@@ -1,0 +1,46 @@
+
+#ErrorDocument 404 http://tvtoast.com/not-found/
+
+RewriteEngine On 
+
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteRule ^study-material/([A-Za-z0-9-]+)/?$ http://localhost/ihpc/study-material/year/index.php?yr=$1 [NC,L]
+
+RewriteRule ^exam-papers/([A-Za-z0-9-]+)/?$ http://localhost/ihpc/exam-papers/year/index.php?yr=$1 [NC,L]
+
+
+
+RewriteRule ^study-material/([A-Za-z0-9-]+)/([0-9]+)/?$ http://localhost/ihpc/study-material/course/index.php?cr=$1&yr=$2 [NC,L]
+
+RewriteRule ^exam-papers/([A-Za-z0-9-]+)/([0-9]+)/?$ http://localhost/ihpc/exam-papers/course/index.php?cr=$1&yr=$2 [NC,L]
+
+
+
+
+RewriteRule ^study-material/([A-Za-z0-9-]+)/([0-9]+)/([A-Za-z0-9-]+)/?$ http://localhost/ihpc/study-material/subjects/index.php?cr=$1&yr=$2&br=$3 [NC,L]
+
+RewriteRule ^exam-papers/([A-Za-z0-9-]+)/([0-9]+)/([A-Za-z0-9-]+)/?$ http://localhost/ihpc/exam-papers/subjects/index.php?cr=$1&yr=$2&br=$3 [NC,L]
+
+
+
+
+
+RewriteRule ^study-material/([A-Za-z0-9-]+)/([0-9]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ http://localhost/ihpc/study-material/units/index.php?sr=$4 [NC,L]
+
+RewriteRule ^exam-papers/([A-Za-z0-9-]+)/([0-9]+)/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ http://localhost/ihpc/exam-papers/papers/index.php?sr=$4 [NC,L]
+
+
+
+
+#RewriteRule ^series/([A-Za-z0-9-]+)/?$ series/episode/index.php?sr=$1&v=2323232 [NC,L]
+
+#RewriteRule ^study-material/([A-Za-z0-9-]+)/([0-9]+)/([0-9]+)/?$ series/watch/index.php?sr=$1&v=2323232&sn=$2&ep=$3 [NC,L]
+
+#RewriteRule ^study-material/([A-Za-z0-9-]+)/([0-9]+)/([0-9]+)/?$ series/watch/index.php?sr=$1&v=2323232&sn=$2&ep=$3 [NC,L]
+
+#RewriteRule ^study-material/([A-Za-z0-9-]+)/([0-9]+)/([0-9]+)/?$ series/watch/index.php?sr=$1&v=2323232&sn=$2&ep=$3 [NC,L]
+
+#RewriteRule ^study-material/([A-Za-z0-9-]+)/([0-9]+)/([0-9]+)/?$ series/watch/index.php?sr=$1&v=2323232&sn=$2&ep=$3 [NC,L]
